@@ -1,0 +1,5 @@
+projectKey=jacocoshweta
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/jacocoshweta
+ceTaskId=AXj42Me5dlouSJnWetsq
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXj42Me5dlouSJnWetsq
