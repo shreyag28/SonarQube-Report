@@ -14,7 +14,7 @@ pipeline {
               //  git 'https://github.com/shreyag28/SonarQube-Report.git'
 
                 
-                bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                bat "mvn clean install"
 
                 
             }
