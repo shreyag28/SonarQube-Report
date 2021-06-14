@@ -1,3 +1,4 @@
+properties([[$class: 'JiraProjectProperty', siteName: 'https://cybagejanshreya.atlassian.net/'], parameters([choice(choices: 'master\nfeature1', description: 'select the branch to build ', name: 'branches')])])
 pipeline {
     agent {
     label 'master'
@@ -8,24 +9,14 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('$cm Checkout') {
             steps {
                
-              //  git 'https://github.com/shreyag28/SonarQube-Report.git'
-
-                
-                bat "mvn -Dmaven.test.failure.ignore=true clean package"
-
+              echo "Pilling changes from the branch ${params.branches}"
                 
             }
 
-            post {
-                
-                success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
-            }
+            
         }
     }
 }
