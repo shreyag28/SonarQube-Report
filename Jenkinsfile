@@ -19,10 +19,12 @@ pipeline {
             
         }
         stage('SonarQube analysis') {
+            steps{
     withSonarQubeEnv('SonarQube ') 
             { 
       bat 'mvn org.sonarsource.scanner.maven:sonar:sonar'
     }
+            }
   }
     }
 }
