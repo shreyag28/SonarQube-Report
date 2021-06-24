@@ -22,7 +22,7 @@ pipeline {
             steps{
     withSonarQubeEnv('SonarQube ') 
             { 
-      bat 'mvn org.sonarsource.scanner.maven:sonar:sonar'
+      bat 'sonar-scanner'
     }
             }
   }
