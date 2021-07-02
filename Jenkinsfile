@@ -9,14 +9,20 @@ pipeline {
     }
     parameters {
        string(defaultValue: 'DefaultJob', description: 'Name of the Job', name: 'Job', trim: false)
+        booleanParam(defaultValue: true, description: 'select the value', name: 'Toggle')
+        choice(choices: ['Master', 'Feature1'], description: 'Select the branch', name: 'Branch')
+        text(defaultValue: 'Jenkins job', description: 'Write about the Job', name: 'Description')
     
   }
 
     stages {
-        stage('$cm Checkout') {
+        stage('Welcome Stage ') {
             steps {
                
-              echo "Pilling changes from the branch ${params.Job}"
+                echo "Name of the following Job ${params.Job}" 
+                echo "Value selected is ${params.Toggle}"
+              echo "Pilling changes from the branch ${params.Branch}"
+                echo "Details of the Job ${params.Description}"
                 
             }
 
