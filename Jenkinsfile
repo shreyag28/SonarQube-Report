@@ -7,12 +7,16 @@ pipeline {
     tools {
         maven "Maven"
     }
+    parameters {
+       string(defaultValue: 'DefaultJob', description: 'Name of the Job', name: 'Job', trim: false)
+    
+  }
 
     stages {
         stage('$cm Checkout') {
             steps {
                
-              echo "Pilling changes from the branch ${params.branches}"
+              echo "Pilling changes from the branch ${params.Job}"
                 
             }
 
